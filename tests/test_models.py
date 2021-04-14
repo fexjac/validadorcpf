@@ -11,7 +11,7 @@ def test_se_insere_dados_cpf():
 
 def test_verifica_se_quantidade_de_digitos_sao_validos():
     cpf1 = Cpf(1)
-    cpf1.set_numero('00000000000')
+    cpf1.set_numero('00000000000')#inserir cpf valido antes de testar
     assert 11 == len(str(cpf1.numero()))
 
 def test_verifica_calculo_de_digitos_verificadores():
