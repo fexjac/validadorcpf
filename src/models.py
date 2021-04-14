@@ -11,21 +11,28 @@ class Cpf():
         return self.__numero
 
     def set_numero(self, numero):
+        cpf_invalidos = ['00000000000', '11111111111', '22222222222',
+        '33333333333', '44444444444', '55555555555', '66666666666',
+        '77777777777', '88888888888', '99999999999']
+
         if len(str(numero)) == 11:
-            self.__numero = numero
+            if numero in cpf_invalidos:
+                self.__numero = 0
+            else:
+                self.__numero = numero
         else:
             self.__numero = 0
 
     def verifica_igualdade_digitos(self, numero):
         numero = str(numero)
+        cpf_invalidos = ['00000000000', '11111111111', '22222222222',
+        '33333333333', '44444444444', '55555555555', '66666666666',
+        '77777777777', '88888888888', '99999999999']
+        if numero in cpf_invalidos:
+            self.__cpf_invalido = False
+        else:
+            self.__cpf_invalido = True
 
-        i = 0
-        while i < 10:
-            if numero[i] is numero[i+1]:
-                self.__cpf_invalido = False
-            else:
-                self.__cpf_invalido = True
-            i += 1
         return self.__cpf_invalido
 
     def calcula_digitos_validade_cpf(self):
