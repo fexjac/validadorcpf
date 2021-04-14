@@ -19,4 +19,14 @@ def test_verifica_calculo_de_digitos_verificadores():
     cpf1.set_numero('00000000000')#inserir cpf valido antes de testar
     cpf1.calcula_digitos_validade_cpf()
     assert cpf1.calculado() == True
+
+def test_verifica_validacao_de_digitos_verificadores():
+    cpf1 = Cpf(1)
+    cpf1.set_numero('00000000000')#inserir cpf valido antes de testar
+    cpf1.calcula_digitos_validade_cpf()
     assert cpf1.validado() == True
+
+def test_verifica_se_todos_digitos_sao_iguais():
+    cpf1 = Cpf(1)
+    numero = ('11111111111')
+    assert False == cpf1.verifica_igualdade_digitos(numero)

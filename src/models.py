@@ -4,8 +4,8 @@ class Cpf():
         self.__registro = registro
         self.__numero = None
         self.__calculado = False
-        self.__cpf_validado = False
-
+        self.__dv_cpf_validado = False
+        self.__cpf_invalido = False
 
     def numero(self):
         return self.__numero
@@ -15,6 +15,18 @@ class Cpf():
             self.__numero = numero
         else:
             self.__numero = 0
+
+    def verifica_igualdade_digitos(self, numero):
+        numero = str(numero)
+
+        i = 0
+        while i < 10:
+            if numero[i] is numero[i+1]:
+                self.__cpf_invalido = False
+            else:
+                self.__cpf_invalido = True
+            i += 1
+        return self.__cpf_invalido
 
     def calcula_digitos_validade_cpf(self):
         dv1 = False
@@ -50,11 +62,11 @@ class Cpf():
         if validar == digito11:
             dv2 = True
         if dv1 == True and dv2 ==True:
-            self.__cpf_validado = True
+            self.__dv_cpf_validado = True
         self.__calculado = True
 
     def calculado(self):
         return self.__calculado
 
     def validado(self):
-        return self.__cpf_validado
+        return self.__dv_cpf_validado

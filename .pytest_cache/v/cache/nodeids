@@ -3,5 +3,7 @@
   "tests/test_models.py::test_verifica_calculo_de_digitos_verificadores",
   "tests/test_models.py::test_verifica_criacao_em_branco",
   "tests/test_models.py::test_verifica_quantidade_de_digitos_validos",
-  "tests/test_models.py::test_verifica_se_quantidade_de_digitos_sao_validos"
+  "tests/test_models.py::test_verifica_se_quantidade_de_digitos_sao_validos",
+  "tests/test_models.py::test_verifica_se_todos_digitos_sao_iguais",
+  "tests/test_models.py::test_verifica_validacao_de_digitos_verificadores"
 ]
