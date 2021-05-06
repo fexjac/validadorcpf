@@ -39,37 +39,35 @@ class Cpf():
         dv1 = False
         dv2 = False
 
-        digito1 = int(self.__numero[0])*10
-        digito2 = int(self.__numero[1])*9
-        digito3 = int(self.__numero[2])*8
-        digito4 = int(self.__numero[3])*7
-        digito5 = int(self.__numero[4])*6
-        digito6 = int(self.__numero[5])*5
-        digito7 = int(self.__numero[6])*4
-        digito8 = int(self.__numero[7])*3
-        digito9 = int(self.__numero[8])*2
+        totalizador = 0
+        digito = 0
+
+        for i in range(10, 1, -1):
+          totalizador += (int(self.__numero[digito]))*i
+          digito += 1
+
         digito10 = int(self.__numero[9])
-        totalizador = digito1+digito2+digito3+digito4+digito5+digito6+digito7+digito8+digito9
         validar = (totalizador*10)%11
+
         if validar == digito10:
             dv1 = True
-        digito1 = int(self.__numero[0])*11
-        digito2 = int(self.__numero[1])*10
-        digito3 = int(self.__numero[2])*9
-        digito4 = int(self.__numero[3])*8
-        digito5 = int(self.__numero[4])*7
-        digito6 = int(self.__numero[5])*6
-        digito7 = int(self.__numero[6])*5
-        digito8 = int(self.__numero[7])*4
-        digito9 = int(self.__numero[8])*3
-        digito10 = int(self.__numero[9])*2
+
+        totalizador = 0
+        digito = 0
+
+        for i in range(11, 1, -1):
+          totalizador += (int(self.__numero[digito]))*i
+          digito += 1
+
         digito11 = int(self.__numero[10])
-        totalizador = digito1+digito2+digito3+digito4+digito5+digito6+digito7+digito8+digito9+digito10
         validar = (totalizador*10)%11
+
         if validar == digito11:
             dv2 = True
+
         if dv1 == True and dv2 ==True:
             self.__dv_cpf_validado = True
+
         self.__calculado = True
 
     def calculado(self):
